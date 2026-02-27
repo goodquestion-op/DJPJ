@@ -1,6 +1,7 @@
 from django.db import models
 
-class teacher (models.model):
+class teacher (models.Model):
     Name = models.CharField(max_length=25)
+    Area = models.CharField(max_length=30)
 
 # Create your models here.
