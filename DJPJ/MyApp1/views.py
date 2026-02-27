@@ -5,10 +5,19 @@ from .models import teacher
 
 
 def index(request):
-  teacher
+  teach = teacher.objects.all()
+
+  return render(request, "MyApp1/index.html",{'content': teach})
   
-    
-    
+def about(request):
+   return render(
+      request,
+      "HelloDjangoApp/about.html",
+      {
+         'title' : "About HelloDjangoApp",
+         'content' : "Example app page for Django."
+      }
+   )    
     
     
     
