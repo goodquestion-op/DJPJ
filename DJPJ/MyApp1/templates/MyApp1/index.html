@@ -1,7 +1,34 @@
 <html>
+<head>
+    <title>{{ title }}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="../../static/site.css" />
+    
+</head>
+
 <head><title></title></head>
 
 <body>
+
+    <span class="message">{{ message }}</span>{{ bingus }}
+
+    <strong>Teachers!</strong>
+    {% if content %}
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Teaching Area</th>
+        </tr>
+        {% for teach in content %}
+        <tr>
+            <td>{{teach.Name}}</td>
+            <td>{{teach.Area}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <strong>No DATA!</strong>
+    {% endif %}
 
 {{ content }}
 
