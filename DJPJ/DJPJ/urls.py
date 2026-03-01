@@ -1,11 +1,12 @@
 from django.urls import include, re_path
-import HelloDjangoApp.views
+import MyApp1.views
 
 # Django processes URL patterns in the order they appear in the array
 urlpatterns = [
-    re_path(r'^$', HelloDjangoApp.views.index, name='index'),
-    re_path(r'^home$', HelloDjangoApp.views.index, name='home')
+    re_path(r'^$', MyApp1.views.index, name='index'),
+    re_path(r'^home$', MyApp1.views.index, name='home')
 ]
+
 
 
 
@@ -29,11 +30,14 @@ Including another URLconf
 """
 
 # Uncomment next two lines to enable admin:
-#from django.contrib import admin
-#from django.urls import path
+from django.contrib import admin
+from django.urls import path
 
 
 urlpatterns = [
     # Uncomment the next line to enable the admin:
-    #path('admin/', admin.site.urls)
+    path('admin/', admin.site.urls),
+    re_path(r'^$',MyApp1.views.index, name='index'),
+    re_path(r'^home$',MyApp1.views.index,name='home'),
+    re_path(r'^about$', MyApp1.views.about, name='about')
 ]
