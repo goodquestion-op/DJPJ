@@ -38,6 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'MyApp1',
+
+    'cars',
+    'modles',
+    'orders'
+
 ]
 
 # Middleware framework
@@ -59,7 +64,7 @@ ROOT_URLCONF = 'DJPJ.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
