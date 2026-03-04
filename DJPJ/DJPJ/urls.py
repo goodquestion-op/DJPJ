@@ -1,3 +1,4 @@
+from xml.dom.minidom import Document
 from django.urls import include, re_path
 import MyApp1.views
 
@@ -37,7 +38,8 @@ from django.urls import path
 urlpatterns = [
     # Uncomment the next line to enable the admin:
     path('admin/', admin.site.urls),
+    path('', include('orders.urls', namespace='orders')),
     re_path(r'^$',MyApp1.views.index, name='index'),
     re_path(r'^home$',MyApp1.views.index,name='home'),
     re_path(r'^about$', MyApp1.views.about, name='about')
-]
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
