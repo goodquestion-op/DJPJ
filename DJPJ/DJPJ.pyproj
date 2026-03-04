@@ -43,7 +43,8 @@
     <Compile Include="MyApp1\__init__.py" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="MyApp1\static\site1.css" />
+    <Content Include="MyApp1\static\semantic.js" />
+    <Content Include="MyApp1\static\style.css" />
     <Content Include="MyApp1\templates\about.html" />
     <Content Include="MyApp1\templates\MyApp1\index.html" />
     <Content Include="requirements.txt" />

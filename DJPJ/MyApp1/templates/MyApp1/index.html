@@ -10,6 +10,13 @@
     <!-- semantic UI-->
     <link rel="stylesheet" type='text/css' href=" https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+
+    <!-- custom css & js-->
+    <script src={% static 'main.js' %} defer></script>
+    <script src = {% static 'semantic.js' %} defer></script>
+    <link rel="stylesheet" href={% static 'style.css' %} >
+
+
     <title>
         Title
     </title>
@@ -19,6 +26,17 @@
 </head>
 
 <body>
+    <div class="ui container mt-5">
+        {% block content %}
+        {% endblock content %}
+
+
+    </div>
+
+
+
+
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">PythonGuides</a>
        
