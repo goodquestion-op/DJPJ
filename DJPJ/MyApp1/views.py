@@ -17,7 +17,10 @@ def about(request):
          'title' : "About HelloDjangoApp",
          'content' : "Example app page for Django."
       }
-   )    
+   )   
+
+def main_view(request):
+    return render(request, 'order/index.html',{})
     
     
     
