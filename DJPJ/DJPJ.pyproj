@@ -52,10 +52,10 @@
     <Content Include="MyApp1\static\main.js" />
     <Content Include="MyApp1\static\semantic.js" />
     <Content Include="MyApp1\static\style.css" />
-    <Content Include="MyApp1\templates\about.html" />
-    <Content Include="MyApp1\templates\input.html" />
+    <Content Include="MyApp1\templates\MyApp1\about.html" />
+    <Content Include="MyApp1\templates\MyApp1\index.html" />
+    <Content Include="MyApp1\templates\MyApp1\input.html" />
     <Content Include="MyApp1\templates\main.html" />
-    <Content Include="MyApp1\templates\index.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>

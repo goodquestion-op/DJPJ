@@ -6,7 +6,8 @@ from django.db.models import Min
 from django.db import transaction
 
 class Command(BaseCommand):
-    help = "This is some help text"
+    help = "python manage.py importCSV --path H:(The CSV file path that you want to import) \n python manage.py importCSV --list (will list all duplicates in the datatbase) \n python manage.py importCSV --del (delets all duplicates in the data base)"
+    
 
     def add_arguments(self, parser):
         parser.add_argument('--path', type=str)
