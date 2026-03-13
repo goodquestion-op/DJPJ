@@ -1,15 +1,22 @@
 from xml.dom.minidom import Document
 from django.urls import include, re_path
+from django.contrib import admin
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
+
 import MyApp1.views
 
-app_name = "orders"
 
 # Django processes URL patterns in the order they appear in the array
 urlpatterns = [
-    path('',main_view, name='main-view'),
+    path('admin/', admin.site.urls),
+    path('', include('orders.urls',namespace='orders')),
+    
     re_path(r'^$', MyApp1.views.index, name='index'),
     re_path(r'^home$', MyApp1.views.index, name='home')
-]
+]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    
        
 
 

@@ -20,7 +20,7 @@ def about(request):
    )   
 
 def main_view(request):
-    return render(request, 'order/index.html',{})
+    return render(request, 'orders/index.html',{})
     
     
     

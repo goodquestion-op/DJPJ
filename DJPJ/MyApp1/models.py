@@ -1,3 +1,4 @@
+from ast import mod
 from pyexpat import model
 from unittest.util import _MAX_LENGTH
 from django.db import models
@@ -5,6 +6,7 @@ from django.db import models
 class teacher (models.Model):
     Name = models.CharField(max_length=25)
     Area = models.CharField(max_length=30)
+
 class Car(models.Model):
     name = models.CharField(max_length=80)
     country = models.CharField(max_length=100)
@@ -22,7 +24,9 @@ class Model(models.Model):
         return f"{self.car}-{self.name}"
 
 class Order(models.Model):
+    car = models.ForeignKey(Car, on_delet=models.CASCADE)
+    model = models.ForeignKey(Model, on_delet=models.CASCADE)
 
-    
+    def __str__(self):
 
-# Create your models here.
+      return str().self.pk()

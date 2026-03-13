@@ -36,12 +36,18 @@
     <Compile Include="DJPJ\wsgi.py" />
     <Compile Include="MyApp1\admin.py" />
     <Compile Include="MyApp1\apps.py" />
+    <Compile Include="MyApp1\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="MyApp1\management\commands\importCSV.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="MyApp1\migrations\__init__.py" />
     <Compile Include="MyApp1\models.py" />
     <Compile Include="MyApp1\tests.py" />
+    <Compile Include="MyApp1\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="MyApp1\views.py" />
     <Compile Include="MyApp1\__init__.py" />
   </ItemGroup>
@@ -49,9 +55,9 @@
     <Content Include="MyApp1\static\main.js" />
     <Content Include="MyApp1\static\semantic.js" />
     <Content Include="MyApp1\static\style.css" />
-    <Content Include="MyApp1\templates\about.html" />
-    <Content Include="MyApp1\templates\main.html" />
-    <Content Include="MyApp1\templates\index.html" />
+    <Content Include="MyApp1\templates\MyApp1\about.html" />
+    <Content Include="MyApp1\templates\MyApp1\base.html" />
+    <Content Include="MyApp1\templates\MyApp1\main.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
