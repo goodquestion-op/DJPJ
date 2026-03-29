@@ -2,12 +2,8 @@ from dataclasses import field
 from django import forms
 from .models import teacher
 
-FRUIT_CHOICES= [
-    ('orange', 'Oranges'),
-    ('cantaloupe', 'Cantaloupes'),
-    ('mango', 'Mangoes'),
-    ('honeydew', 'Honeydews'),
-    ]
+
+
 
 class CarForm(forms.ModelForm):
     class Meta:
@@ -30,17 +26,15 @@ class InputForm(forms.ModelForm):
 
  
 
-class UserForm(forms.Form):
-    first_name= forms.CharField(max_length=100)
-    last_name= forms.CharField(max_length=100)
-    email= forms.EmailField()
-    age= forms.IntegerField()
-    favorite_fruit= forms.CharField(label='What is your favorite fruit?', widget=forms.Select(choices=FRUIT_CHOICES))
 
 class test(forms.Form):
     class Meta:
         model = teacher
         fields = ['Name']
 
-
+class Mydropdownform(forms.Form):
+    selection = forms.ModelChoiceField(
+        queryset = teacher.objects.all(),
+        empty_label="(Select an option)"
+    )
 

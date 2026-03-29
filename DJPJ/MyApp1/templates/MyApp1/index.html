@@ -10,6 +10,12 @@
 
 <body>
 
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+
     <select name="post_categories" class="filter-selectbox">
         <option value="zero">"Zero"</option>
         <option value="one">"One"</option>
@@ -23,7 +29,7 @@
     </select>
 
 
-   
+
     <br>
     <a href="{% url 'input' %}">Add a new teacher :P</a>
     <br>

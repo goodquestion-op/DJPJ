@@ -4,6 +4,7 @@ from .forms import InputForm
 from django.http import HttpResponse
 from datetime import datetime
 from django.shortcuts import render, redirect
+from .forms import Mydropdownform
 
 
 
@@ -11,6 +12,10 @@ def index(request):
   teach = teacher.objects.all()
 
   return render(request, "MyApp1/index.html",{'content': teach})
+
+def my_view(request):
+    form = Mydropdownform()
+    return render(request, "MyApp1/index.html", {'form': form})
   
 def about(request):
    return render(
