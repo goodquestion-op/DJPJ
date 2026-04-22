@@ -1,14 +1,36 @@
 <html>
+ {% load django_bootstrap5 %}
+
+    {# Load CSS and JavaScript #}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    {# Display django.contrib.messages as Bootstrap alerts #}
+    {% bootstrap_messages %}
+
+    {# Display a form #}
+<form action="/url/to/submit/" method="post" class="form">
+    {% csrf_token %}
+
+    {% bootstrap_form form %}
+
+    {% bootstrap_button button_type="submit" content="OK" %}
+    {% bootstrap_button button_type="reset" content="Cancel" %}
+
+</form>
 <head>
     <title>
         test
     </title>
-        {% load static %}
+    {% load static %}
+    <a href="index.html">index.html</a>
     <link rel="stylesheet" type="text/css" href="../../static/site.css" />
-    
+
 </head>
 
 <body>
+
+
 
     <form method="post">
         {% csrf_token %}
@@ -22,9 +44,9 @@
         <option value="two">"Two"</option>
     </select>
 
-    <select name="post_categories" class="filter-selectbox">
+    <select name=teacher class="filter-selectbox">
         {% for Name in teacher %}
-        <option value="{{ test.Name }}">{{ test.Name }}</option>
+        <option value="{{ teacher.Name }}">{{ teacher.Name }}</option>
         {% endfor %}
     </select>
 
@@ -52,15 +74,25 @@
         <br>-->
 
     <strong>Teachers!</strong>
-    {% if content %}
+    {% if
+    content %}
+    bl
     <table>
         <tr>
             <th>Name</th>
+            Te
             <th>Teaching Area</th>
         </tr>
         {% for teach in content %}
         <tr>
-            <td>{{teach.Name}}</td>
+            <td>
+                {{
+teac
+h.Name
+                }}
+            </td>
+            ac
+            re
             <td>{{teach.Area}}</td>
         </tr>
         {% endfor %}
@@ -69,4 +101,4 @@
     <strong>No DATA!</strong>
     {% endif %}
 </body>
-    </html>
+</html>

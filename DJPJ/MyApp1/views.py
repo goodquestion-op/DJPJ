@@ -12,7 +12,7 @@ def index(request):
   teach = teacher.objects.all()
   form = Mydropdownform()
 
-  return render(request, "MyApp1/index.html",{'content': teach})
+  return render(request, "MyApp1/index.html",{'content': teach,'name': form})
 
 
 
