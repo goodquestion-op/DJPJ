@@ -32,12 +32,8 @@ class test(forms.Form):
         model = teacher
         fields = ['Name']
 
-class Mydropdownform(forms.ModelForm):
-    class Meta:
-        model = teacher
-        fields =['Name']
-
-        selection = forms.ModelChoiceField(
+class Mydropdownform(forms.Form):
+    selection = forms.ModelChoiceField(
         queryset = teacher.objects.all(),
         empty_label="(Select an option)"
     )
