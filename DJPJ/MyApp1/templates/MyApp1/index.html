@@ -34,41 +34,16 @@
     <a href="{% url 'input' %}">Add a new teacher :P</a>
     <br>
 
-    <!--  <br>
-        <form method="post" class="form-group">
-            {% csrf_token %}
-            <div class="form-group col-md-12 mb-3">
-                <label for="{{ form.Name.label }}">{{ form.Name.label }}</label>
-                <input type="text" class="form-control" id="{{ form.Name.auto_id }}" name="{{ form.Name.name }}">
-                {{ form.Name }}
-            </div>
-            <div class="form-group col-md-12 mb-3">
-                <label for="{{ form.Area.label }}">{{ form.Area.label }}</label>
-                {{ form.Area }}
-            </div>
-            <hr class="mb-4">
-            <button type="submit" class="btn btn-secondary btn-lg btn-block">Submit New Car</button>
-        </form>
-        <br>-->
-
     <strong>Teachers!</strong>
-    {% if
-    content %}
-    bl
+    {% if content %}
     <table>
         <tr>
             <th>Name</th>
-            Te
             <th>Teaching Area</th>
         </tr>
         {% for teach in content %}
         <tr>
-            <td>
-                {{
-                    teach.Name
-                }}
-            </td>
-            acre
+            <td>{{teach.Name}}</td>
             <td>{{teach.Area}}</td>
         </tr>
         {% endfor %}
@@ -76,5 +51,7 @@
     {% else %}
     <strong>No DATA!</strong>
     {% endif %}
+
 </body>
-</html>
+    </html>
+

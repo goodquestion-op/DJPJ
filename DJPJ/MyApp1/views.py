@@ -12,7 +12,7 @@ def index(request):
   teach = teacher.objects.all()
   form = Mydropdownform()
 
-  return render(request, "MyApp1/index.html",{'content': teach)
+  return render(request, "MyApp1/index.html",{'content': teach})
 
 
 
@@ -34,7 +34,6 @@ def index(request):
  #   p.showPage()
  #   p.save()
    # return response
-
 def about(request):
    return render(
       request,
@@ -44,6 +43,7 @@ def about(request):
          'content' : "Example app page for Django."
       }
    )    
+  
 
 def input_view(request):
     if request.method == "POST":
