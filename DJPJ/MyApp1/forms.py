@@ -16,7 +16,7 @@ class CarForm(forms.ModelForm):
         self.fields['Name'].widget.attrs.update({"class": "form-control"})
         for fields in self.fields:
             self.fields[field].widget.attrs.update({'class':"form-control"})
-
+#
         
 
 class InputForm(forms.ModelForm):
