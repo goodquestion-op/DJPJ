@@ -52,12 +52,9 @@
     <Compile Include="MyApp1\__init__.py" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="MyApp1\static\main.js" />
-    <Content Include="MyApp1\static\semantic.js" />
-    <Content Include="MyApp1\static\style.css" />
     <Content Include="MyApp1\templates\MyApp1\about.html" />
     <Content Include="MyApp1\templates\MyApp1\base.html" />
-    <Content Include="MyApp1\templates\MyApp1\index.html" />
+    <Content Include="MyApp1\templates\MyApp1\indexgood.html" />
     <Content Include="MyApp1\templates\MyApp1\input.html" />
     <Content Include="MyApp1\templates\MyApp1\main.html" />
     <Content Include="requirements.txt" />
