@@ -7,7 +7,4 @@ class teacher (models.Model):
 class teacher_name (models.Model):
     TName = models.CharField(max_length=20)
 
-#class courseArea (models.Model):
-#    Teacher = models.ManyToManyField(teacher) 
 
-# Create your models here.

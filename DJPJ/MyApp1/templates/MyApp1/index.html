@@ -3,70 +3,53 @@
     <title>
         test
     </title>
-        {% load static %}
+    {% load static %}
     <link rel="stylesheet" type="text/css" href="../../static/site.css" />
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body>
-
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
-    </form>
-
-    <select name="post_categories" class="filter-selectbox">
-        <option value="zero">"Zero"</option>
-        <option value="one">"One"</option>
-        <option value="two">"Two"</option>
-    </select>
-
-    <select name="post_categories" class="filter-selectbox">
-        {% for Name in teacher %}
-        <option value="{{ test.Name }}">{{ test.Name }}</option>
-        {% endfor %}
-    </select>
+    <div class="container">
+        <h1>This is a heading</h1>
 
 
+        <p></p>
+        <p>--------------------</p>
+        <p></p>
 
-    <br>
-    <a href="{% url 'input' %}">Add a new teacher :P</a>
-    <br>
-
-    <!--  <br>
-        <form method="post" class="form-group">
+        <form method="post">
             {% csrf_token %}
-            <div class="form-group col-md-12 mb-3">
-                <label for="{{ form.Name.label }}">{{ form.Name.label }}</label>
-                <input type="text" class="form-control" id="{{ form.Name.auto_id }}" name="{{ form.Name.name }}">
-                {{ form.Name }}
-            </div>
-            <div class="form-group col-md-12 mb-3">
-                <label for="{{ form.Area.label }}">{{ form.Area.label }}</label>
-                {{ form.Area }}
-            </div>
-            <hr class="mb-4">
-            <button type="submit" class="btn btn-secondary btn-lg btn-block">Submit New Car</button>
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success">Submit</button>
         </form>
-        <br>-->
 
-    <strong>Teachers!</strong>
-    {% if content %}
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Teaching Area</th>
-        </tr>
-        {% for teach in content %}
-        <tr>
-            <td>{{teach.Name}}</td>
-            <td>{{teach.Area}}</td>
-        </tr>
-        {% endfor %}
-    </table>
-    {% else %}
-    <strong>No DATA!</strong>
-    {% endif %}
+
+
+
+
+
+        <br>
+        <a href="{% url 'input' %}">Add a new teacher :P</a>
+        <br>
+
+        <strong>Teachers!</strong>
+        {% if content %}
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Teaching Area</th>
+            </tr>
+            {% for teach in content %}
+            <tr>
+                <td>{{teach.Name}}</td>
+                <td>{{teach.Area}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <strong>No DATA!</strong>
+        {% endif %}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
     </html>
