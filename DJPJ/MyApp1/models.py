@@ -5,6 +5,6 @@ class teacher (models.Model):
     Area = models.CharField(max_length=30)
 
 class teacher_name (models.Model):
-    TName = models.CharField(max_length=20)
+    BName = models.CharField(max_length=30)
 
 
