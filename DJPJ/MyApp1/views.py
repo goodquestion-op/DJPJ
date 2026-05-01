@@ -10,12 +10,8 @@ from .forms import Mydropdownform
 
 def index(request):
   teach = teacher.objects.all()
-
-  return render(request, "MyApp1/index.html",{'content': teach})
-
-def index(request):
-    form = Mydropdownform()
-    return render(request, "MyApp1/index.html", {'form': form})
+  form = Mydropdownform()
+  return render(request, "MyApp1/index.html",{'content': teach,'form': form})
 
 
 def about(request):
