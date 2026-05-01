@@ -4,7 +4,9 @@ import MyApp1.views
 # Django processes URL patterns in the order they appear in the array
 urlpatterns = [
     re_path(r'^$', MyApp1.views.index, name='index'),
-    re_path(r'^home$', MyApp1.views.index, name='home')
+    re_path(r'^home$', MyApp1.views.index, name='home'),
+
+    
 ]
 
 
@@ -40,5 +42,6 @@ urlpatterns = [
     re_path(r'^$',MyApp1.views.index, name='index'),
     re_path(r'^home$',MyApp1.views.index,name='home'),
     re_path(r'^about$', MyApp1.views.about, name='about'),
-    re_path(r'input', MyApp1.views.input_view, name='input')
+    re_path(r'input', MyApp1.views.input_view, name='input'),
+    path('report/', MyApp1.views.report, name='report')
 ]
