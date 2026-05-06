@@ -42,7 +42,7 @@ def input_view(request):
         form = InputForm()
     return render(request, "MyApp1/input.html", {"form": form})
 def report(request):
-    pdf_file= staticfiles_storage.path("digitalSoultions.pdf")
+    pdf_file= staticfiles_storage.path("PDF_OUTPUT.pdf")
 
     try:
         merger = PdfWriter()

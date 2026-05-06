@@ -189,6 +189,7 @@
     <Content Include="static\admin\js\vendor\xregexp\xregexp.js" />
     <Content Include="static\admin\js\vendor\xregexp\xregexp.min.js" />
     <Content Include="static\digitalSoultions.pdf" />
+    <Content Include="static\PDF_OUTPUT.pdf" />
     <Content Include="static\site1.css" />
   </ItemGroup>
   <ItemGroup>

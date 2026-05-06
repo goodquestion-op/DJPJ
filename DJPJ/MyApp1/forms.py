@@ -1,15 +1,14 @@
 from dataclasses import field
 from django import forms
 from .models import teacher
-from .models import teacher_name
-
 
 
 
 class CarForm(forms.ModelForm):
     class Meta:
         model = teacher
-        fields = ['Name','Area']
+        fields = ['Name']
+        #'Area'
 
 
     def __int__(self, *args, **kwargs):
@@ -23,7 +22,8 @@ class CarForm(forms.ModelForm):
 class InputForm(forms.ModelForm):
     class Meta:
         model = teacher
-        fields = ['Name', 'Area']
+        fields = ['Name' ]
+        #'Area'
 
  
 
