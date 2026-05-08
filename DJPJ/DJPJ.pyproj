@@ -200,7 +200,6 @@
     <Folder Include="MyApp1\management\" />
     <Folder Include="MyApp1\templates\" />
     <Folder Include="MyApp1\templates\MyApp1\" />
-    <Folder Include="NewFolder1\" />
     <Folder Include="static\" />
     <Folder Include="static\admin\" />
     <Folder Include="static\admin\css\" />
