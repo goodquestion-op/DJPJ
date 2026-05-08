@@ -1,14 +1,14 @@
 from django.db import models
 
-#class Courses (models.Model):
-   #     Course = models.CharField(max_length=25)
-     #   def __str__(self):
-     #      return f"{self.Course} "
+class Areas (models.Model):
+        Area = models.CharField(max_length=25)
+        def __str__(self):
+           return f"{self.Area} "
 
 class teacher (models.Model):
 
    Name = models.CharField(max_length=25)
-   # Course = models.ManyToManyField(Courses)
+   Area = models.ManyToManyField(Areas)
    def __str__(self):
         return f"{self.Name} "
   
@@ -16,18 +16,21 @@ class teacher (models.Model):
 
     
 
-class Areas (models.Model):
-       Name = models.ForeignKey(teacher, on_delete=models.CASCADE)
-       Area = models.CharField(max_length=25)
+class Courses (models.Model):
+       Course = models.CharField(max_length=25)
 
 
        def __str__(self):
-            return f"{self.Area} "
+            return f"{self.Course} "
 
 
 
     
       
    
+
+class Units (models.Model):
+   Area = models.ForeignKey(Areas, on_delete=models.CASCADE)
+   Unit = models.CharField(max_length=30)
 
 
