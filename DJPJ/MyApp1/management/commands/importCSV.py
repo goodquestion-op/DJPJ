@@ -1,7 +1,7 @@
 import csv
 from itertools import count
 from django.core.management import BaseCommand
-from MyApp1.models import teacher
+from MyApp1.models import teacher,Areas
 from django.db.models import Min
 from django.db import transaction
 

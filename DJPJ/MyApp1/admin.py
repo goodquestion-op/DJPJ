@@ -1,8 +1,8 @@
 from django.contrib import admin
-from.models import teacher, Area
+from.models import teacher, Areas
 
 
 
 # Register your models here.
 admin.site.register(teacher)
-admin.site.register(Area)
+admin.site.register(Areas)
