@@ -2,14 +2,19 @@
 
 <html>
 <head>
-    <title>Django form :)</title>
+    <title>Add New Teacher</title>
 </head>
 <body>
-    <h2>Teacher Registration Form</h2>
-    <form action="" method="post">
+    <h2>Teacher Registration</h2>
+    {% block content %}
+    <form class="form-with-validation" action ="/MyApp1/input/" method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Submit">
+        {{form}}
+        <button>Submit</button>
     </form>
+    {% endblock %}
+    <br>
+    <a href="{% url 'index' %}">BACK</a>
+    <br>
 </body>
 </html> 

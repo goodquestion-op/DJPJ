@@ -12,6 +12,7 @@ from reportlab.platypus import Paragraph,Image,Table
 from django.http import FileResponse 
 from django.contrib.staticfiles.storage import staticfiles_storage 
 from io import BytesIO
+from django.contrib.auth.forms import UserCreationForm
 
 
 
@@ -34,13 +35,13 @@ def about(request):
 
 def input_view(request):
     if request.method == "POST":
-        form = InputForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("index")
-    else:
-        form = InputForm()
-    return render(request, "MyApp1/input.html", {"form": form})
+    form = UserCreationForm()
+    return render(request, "MyApp1/input.html", { "form":form })
+
+
+
+
+
 def report(request):
     pdf_file= staticfiles_storage.path("PDF_OUTPUT.pdf")
 
