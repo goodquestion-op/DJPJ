@@ -1,18 +1,20 @@
+from ast import Return
+from urllib.request import Request
+from wsgiref.util import request_uri
 from django.shortcuts import render, redirect
 from .models import teacher
-from .forms import InputForm
+from .forms import InputForm,Mydropdownform,CommentForm
 from django.http import HttpResponse
 from datetime import datetime
 from django.shortcuts import render, redirect
-from .forms import Mydropdownform
-
 from pypdf import PdfWriter, PdfReader 
 from reportlab.pdfgen import canvas 
 from reportlab.platypus import Paragraph,Image,Table
 from django.http import FileResponse 
 from django.contrib.staticfiles.storage import staticfiles_storage 
 from io import BytesIO
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth import login
 
 
 
@@ -20,7 +22,8 @@ from django.contrib.auth.forms import UserCreationForm
 def index(request):
   teach = teacher.objects.all()
   form = Mydropdownform()
-  return render(request, "MyApp1/index.html",{'content': teach,'form': form})
+  info_extra = CommentForm
+  return render(request, "MyApp1/index.html",{'content': teach,'form': form,'info_extra':info_extra})
 
 
 def about(request):
@@ -33,11 +36,26 @@ def about(request):
       }
    )    
 
+
 def input_view(request):
     if request.method == "POST":
-    form = UserCreationForm()
-    return render(request, "MyApp1/input.html", { "form":form })
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            #login(request, form.save())
+            return redirect( "MyApp1/index.html")
+    else:
+        form = UserCreationForm()
+    return render(request, "MyApp1/input.html", { 'form':form })
 
+def login(request):
+    if request.method == "POST":
+         form = AuthenticationForm(data = request.POST) #special kind of form beacue sign in
+         if form.is_valid():
+             #login(request, form.get_user())
+             return redirect( "index")
+    else:
+        form = AuthenticationForm
+    return render(request, "MyApp1/login.html",{'form':form}) 
 
 
 
@@ -71,7 +89,7 @@ def generate_pdf():
     teachers = teacher.objects.all()
     
     for teach in teachers:
-        lines.append((teach.Name, teach.Area))
+        lines.append((teach.Name))
 
     table = Table(lines)
 
@@ -84,7 +102,9 @@ def generate_pdf():
 
     buffer.seek(0)
     return buffer
-    
+
+
+       
     
     
    

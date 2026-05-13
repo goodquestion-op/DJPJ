@@ -2,7 +2,8 @@ from dataclasses import field
 from django import forms
 from .models import teacher
 
-
+class CommentForm(forms.Form):
+    specific_unit_infomation = forms.CharField(widget=forms.Textarea)
 
 class CarForm(forms.ModelForm):
     class Meta:

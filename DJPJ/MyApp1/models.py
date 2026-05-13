@@ -23,7 +23,7 @@ class teacher (models.Model):
     
 
 class Courses (models.Model):
-       Course = models.CharField(max_length=25)
+       Course = models.CharField(max_length=100)
 
 
        def __str__(self):
@@ -38,5 +38,6 @@ class Courses (models.Model):
 class Units (models.Model):
    Area = models.ForeignKey(Areas, on_delete=models.CASCADE)
    Unit = models.CharField(max_length=30)
+
 
 
