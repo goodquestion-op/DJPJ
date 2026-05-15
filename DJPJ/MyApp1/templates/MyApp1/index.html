@@ -19,7 +19,7 @@
 
         <form method="post">
             {% csrf_token %}
-            {{ form.as_p }}
+            {{ Units.as_p }}
             <button type="submit" class="btn btn-success">Submit</button>
         </form>
 
@@ -49,22 +49,7 @@
         <a href="{% url 'login' %}">login</a>
         <br>
 
-        <strong>Teachers!</strong>
-        {% if content %}
-        <table>
-            <tr>
-                <th>Name</th>
 
-            </tr>
-            {% for teach in content %}
-            <tr>
-                <td>{{teach.Name}}</td>
-            </tr>
-            {% endfor %}
-        </table>
-        {% else %}
-        <strong>No DATA!</strong>
-        {% endif %}
 
         <form method="post">
             {% csrf_token %}
