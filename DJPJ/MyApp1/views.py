@@ -3,7 +3,7 @@ from urllib.request import Request
 from wsgiref.util import request_uri
 from django.shortcuts import render, redirect
 from .models import teacher
-from .forms import InputForm,Mydropdownform,CommentForm
+from .forms import InputForm,Mydropdownform,CommentForm,UnitForm
 from django.http import HttpResponse
 from datetime import datetime
 from django.shortcuts import render, redirect
@@ -23,7 +23,8 @@ def index(request):
   teach = teacher.objects.all()
   form = Mydropdownform()
   info_extra = CommentForm
-  return render(request, "MyApp1/index.html",{'content': teach,'form': form,'info_extra':info_extra})
+  Units = UnitForm()
+  return render(request, "MyApp1/index.html",{'content': teach,'form': form,'info_extra':info_extra,'Units':Units})
 
 
 def about(request):
