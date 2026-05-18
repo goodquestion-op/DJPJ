@@ -19,14 +19,18 @@ class teacher (models.Model):
         
 class Courses (models.Model):
        Course = models.CharField(max_length=100)
+       Course_discription = models.CharField(max_length=1000)
        Area = models.ForeignKey(Areas, on_delete=models.CASCADE)
+       
 
        def __str__(self):
             return f"{self.Course} "
 
 class Units (models.Model):
-   Area = models.ForeignKey(Areas, on_delete=models.CASCADE)
+   Course = models.ForeignKey(Courses, on_delete=models.CASCADE)
    Unit = models.CharField(max_length=30)
+   unit_goals = models.CharField(max_length=1000)
+   Content_description = models.CharField(max_length=100)
 
    def __str__(self):
             return f"{self.Unit} "

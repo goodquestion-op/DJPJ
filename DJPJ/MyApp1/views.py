@@ -36,7 +36,7 @@ def about(request):
          'content' : "Example app page for Django."
       }
    )    
-
+ 
 
 def input_view(request):
     if request.method == "POST":
