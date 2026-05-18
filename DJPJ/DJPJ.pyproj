@@ -58,6 +58,7 @@
     <Content Include="MyApp1\templates\MyApp1\input.html" />
     <Content Include="MyApp1\templates\MyApp1\login.html" />
     <Content Include="MyApp1\templates\MyApp1\main.html" />
+    <Content Include="MyApp1\templates\MyApp1\PDF_VIEW.html" />
     <Content Include="requirements.txt" />
     <Content Include="static\admin\css\autocomplete.css" />
     <Content Include="static\admin\css\base.css" />

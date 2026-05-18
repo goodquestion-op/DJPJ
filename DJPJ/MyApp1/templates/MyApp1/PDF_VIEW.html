@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <strong>Teachers:</strong>
+
+    {% if content %}
+
+    <table>
+        <tr>
+            <th>Name</th>
+        </tr>
+        {% for teach in content %}
+        <tr>
+            <td>{{teach.Name}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <strong>No data!</strong>
+    {% endif %}
+    <p><a href="{% url 'report'%}">PDF report</a></p>
+    <br>
+    <a href="{% url 'index' %}">BACK</a>
+    <br>
+
+</body>
+</html>

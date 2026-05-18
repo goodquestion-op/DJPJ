@@ -6,13 +6,13 @@ from django.db import models
 
 
 class Areas (models.Model):
-        Area = models.CharField(max_length=25)
+        Area = models.CharField(max_length=50)
         def __str__(self):
            return f"{self.Area} "
 
 class teacher (models.Model):
 
-   Name = models.CharField(max_length=25)
+   Name = models.CharField(max_length=50)
    Area = models.ManyToManyField(Areas)
    def __str__(self):
         return f"{self.Name} "
@@ -28,7 +28,7 @@ class Courses (models.Model):
 
 class Units (models.Model):
    Course = models.ForeignKey(Courses, on_delete=models.CASCADE)
-   Unit = models.CharField(max_length=30)
+   Unit = models.CharField(max_length=50)
    unit_goals = models.CharField(max_length=1000)
    Content_description = models.CharField(max_length=100)
 

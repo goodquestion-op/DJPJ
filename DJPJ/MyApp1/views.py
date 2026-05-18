@@ -26,7 +26,10 @@ def index(request):
   Units = UnitForm()
   return render(request, "MyApp1/index.html",{'content': teach,'form': form,'info_extra':info_extra,'Units':Units})
 
+def PDF_VIEW(request):
+    teach = teacher.objects.all()
 
+    return render(request, "MyApp1/PDF_VIEW.html",{'content': teach})
 def about(request):
    return render(
       request,

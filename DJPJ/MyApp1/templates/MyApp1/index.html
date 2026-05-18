@@ -28,7 +28,7 @@
         <p></p>
         <p>--------------------</p>
         <p></p>
-        <strong>copy for</strong>  <form method="post">
+        <strong>copy for</strong>  <form method="POST">
             {% csrf_token %}
             {{ form.as_p }}
         </form>
@@ -39,7 +39,9 @@
         <input type='checkbox'>{{ member }} <strong>Print for Q1 students</strong>
         <p><a href="{% url 'report'%}">PDF report</a></p>
 
-
+        <br>
+        <a href="{% url 'PDF_VIEW' %}">View PDF</a>
+        <br>
 
         <br>
         <a href="{% url 'input' %}">Add a new teacher :P</a>
