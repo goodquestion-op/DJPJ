@@ -1,6 +1,6 @@
 from dataclasses import field
 from django import forms
-from .models import teacher, Units
+from .models import teacher, Units,Areas
 
 class CommentForm(forms.Form):
     specific_unit_infomation = forms.CharField(widget=forms.Textarea)
@@ -30,7 +30,11 @@ class UnitForm(forms.Form):
         queryset = Units.objects.all(),
         empty_label="(Select an option)"
     )
-        
+class AreaForm(forms.Form):
+    selection = forms.ModelChoiceField(
+        queryset = Areas.objects.all(),
+        empty_label="(Select an option)"
+    )        
 
  
 

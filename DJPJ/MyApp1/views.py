@@ -3,7 +3,7 @@ from urllib.request import Request
 from wsgiref.util import request_uri
 from django.shortcuts import render, redirect
 from .models import teacher
-from .forms import InputForm,Mydropdownform,CommentForm,UnitForm
+from .forms import InputForm,Mydropdownform,CommentForm,UnitForm,AreaForm
 from django.http import HttpResponse
 from datetime import datetime
 from django.shortcuts import render, redirect
@@ -15,18 +15,28 @@ from django.contrib.staticfiles.storage import staticfiles_storage
 from io import BytesIO
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login
+from django.http import HttpResponseRedirect
 
 
 
 
 def index(request):
-  teach = teacher.objects.all()
-  form = Mydropdownform()
-  info_extra = CommentForm
-  Units = UnitForm()
-  return render(request, "MyApp1/index.html",{'content': teach,'form': form,'info_extra':info_extra,'Units':Units})
+  
+ # form = Mydropdownform() 
+  if request.method == "POST":
+    form = Mydropdownform(request.POST)
+    if form.is_valid():
+        return HttpResponseRedirect('home')
+  else:
+     form = Mydropdownform()
+     teach = teacher.objects.all()
+     info_extra = CommentForm
+     Units = UnitForm()
+     Areas = AreaForm()
+  return render(request, "MyApp1/index.html",{'form': form,'content': teach,'info_extra':info_extra,'Units':Units,'Areas':Areas})
 
-def PDF_VIEW(request):
+
+def PDF_VIEW(request):  
     teach = teacher.objects.all()
 
     return render(request, "MyApp1/PDF_VIEW.html",{'content': teach})

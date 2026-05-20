@@ -16,27 +16,40 @@
         <p></p>
         <p>--------------------</p>
         <p></p>
+        <strong>Teacher</strong>       <strong>Unit</strong>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+        <strong>Area</strong>
 
         <form method="post">
+            {% csrf_token %}
+            {{ Areas.as_p }}
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+        <strong>Unit</strong>
+        <form method="POST">
             {% csrf_token %}
             {{ Units.as_p }}
             <button type="submit" class="btn btn-success">Submit</button>
         </form>
-
-
 
         <p></p>
         <p>--------------------</p>
         <p></p>
         <strong>copy for</strong>  <form method="POST">
             {% csrf_token %}
-            {{ form.as_p }}
+            {{ Units.as_p }}
+            <button type="submit" class="btn btn-success">Submit</button>
         </form>
 
         <button type="submit" class="btn btn-success">Submit</button>
         <input type='checkbox'>{{ member }} <strong>published</strong>
         <input type='checkbox'>{{ member }} <strong>Is vet</strong>
         <input type='checkbox'>{{ member }} <strong>Print for Q1 students</strong>
+
         <p><a href="{% url 'report'%}">PDF report</a></p>
 
         <br>
